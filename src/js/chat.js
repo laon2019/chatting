@@ -22,7 +22,11 @@ function send(){
     socket.emit("chatting", param)
 }
 
-sendButton.addEventListener("click", send)
+sendButton.addEventListener("click", (event)=>{
+    send()
+    chatInput.value = ""
+})
+// sendButton.addEventListener("click", send)
 
 
 socket.on("chatting", (data)=>{
